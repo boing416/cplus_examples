@@ -1,4 +1,5 @@
 ﻿#include<iostream>
+#includeБfstream>
 #include<ctime>
 using namespace std;
 
@@ -93,6 +94,13 @@ int Factorial(int number)
 	return number * Factorial(number - 1);
 }
 
+void ChangeValue(int *px, int *py)
+{
+	int temp = *px;
+	*px = *py;
+	*py = temp;
+}
+
 void LinkMemory(int *pa)
 {
 	//////////////////////////memory links
@@ -103,8 +111,22 @@ void LinkMemory(int *pa)
 	//int arr[5]{ 4,7,1,4,2 };
 	//cout << arr << endl; //first element array;
 
-	(*pa)++;
+	//(*pa)++;
+
+	
+
+
 }
+template <typename T, typename U>
+void TemplateFunc(T *px,  U *py)
+{
+	int temp = *px;
+	*px = *py;
+	*py = temp;
+}
+
+//ДЗ написать ШАБЛОННУЮ функцию которая меняет местами значения 2-х переменных с помощью ССЫЛОК.
+
 
 int main()
 {  
@@ -112,7 +134,14 @@ int main()
 
 	 
 	  
-	
+	int a = 1;
+	string	b = "Test";
+
+	cout << a << endl;
+	cout << b << endl; 
+	TemplateFunc(&a, &b);  
+	cout << a << endl;
+	cout << b << endl; 
 	  
 	 
 
